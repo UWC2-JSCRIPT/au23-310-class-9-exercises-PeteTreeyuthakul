@@ -20,7 +20,15 @@ console.log(counter.getCount());
 // - addMessage method that adds a message to the array
 // - getMessage(index) method that returns the message at index index
 
-const createMessageHolder = () => {};
+const createMessageHolder = () => {
+  let messageHold = [];
+  const addMessage =(input)=> messageHold.push(input) ;
+  const getMessage =(input)=>messageHold[input] ;
+  return{
+    addMessage,
+    getMessage,
+  };
+};
 
 // Test
 const messageHolder = createMessageHolder();
@@ -55,7 +63,12 @@ console.log(addThree(41));
 // This will return a function a function greet
 // - This accepts a single argument, name (i.e. "Matt")
 // - This function should return the greeting combined with the name, (i.e. "Hello Matt")
-const createGreeting = function(greeting) {};
+const createGreeting = function(greeting) {
+  const addName = function(name){
+    return(`${greeting}!,${name}.`)
+  }
+  return addName;
+};
 
 // Test
 const welcomeGreet = createGreeting('Welcome');
